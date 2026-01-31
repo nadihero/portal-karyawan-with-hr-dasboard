@@ -102,4 +102,4 @@ MIT License
 
 ## Author
 
-Tawaharu Team - 2026
+ig:asdarium - 2026
