@@ -1,36 +1,105 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portal Karyawan + HR Dashboard
+
+Aplikasi Portal Karyawan dengan HR Dashboard untuk manajemen karyawan, absensi, cuti, dan penggajian.
+
+## Features
+
+### Portal Karyawan (Mobile-First)
+- **Beranda** - Ringkasan gaji bulanan dengan toggle visibility, kartu 12 bulan dengan hover actions
+- **Cuti** - Sisa cuti, riwayat pengajuan, ajukan cuti baru
+- **Absensi** - Statistik kehadiran, riwayat 7 hari terakhir, statistik bulanan
+- **Profil** - Informasi karyawan, pengaturan akun, logout
+
+### HR Dashboard (Desktop)
+- **Dashboard** - Statistik karyawan, chart kehadiran, distribusi gaji, aktivitas terbaru
+- **Karyawan** - Manajemen data karyawan (CRUD), search, filter, pagination
+- **Absensi** - Rekap absensi harian, status hadir/telat/absen/cuti
+- **Pengajuan Cuti** - Approve/reject pengajuan, filter status
+- **Penggajian** - Slip gaji, generate slip, export data
+- **Pengaturan** - Konfigurasi perusahaan, jam kerja, notifikasi, backup
+
+## Tech Stack
+
+- **Framework:** Next.js 16.1.6
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS 4
+- **Icons:** Lucide React
+- **Font:** Chirp (Custom)
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+- Node.js 18+
+- npm or yarn
+
+### Installation
 
 ```bash
+# Clone repository
+git clone https://github.com/nadihero/portal-karyawan-with-hr-dasboard.git
+
+# Navigate to project
+cd portal-karyawan-with-hr-dasboard
+
+# Install dependencies
+npm install
+
+# Run development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Access
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Portal Karyawan:** http://localhost:3000
+- **HR Dashboard:** http://localhost:3000/admin
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Project Structure
 
-## Learn More
+```
+app/
+├── layout.tsx              # Root layout
+├── globals.css             # Global styles + custom CSS
+├── components/             # Shared components
+│   ├── Header.tsx
+│   ├── BottomNav.tsx
+│   ├── BalanceCard.tsx
+│   └── MonthlyCard.tsx
+├── (portal)/               # Portal Karyawan (Mobile)
+│   ├── layout.tsx          # Mobile frame wrapper
+│   ├── page.tsx            # Beranda
+│   ├── cuti/page.tsx
+│   ├── absensi/page.tsx
+│   └── profil/page.tsx
+└── admin/                  # HR Dashboard (Desktop)
+    ├── layout.tsx          # Sidebar + Header
+    ├── page.tsx            # Dashboard
+    ├── karyawan/page.tsx
+    ├── absensi/page.tsx
+    ├── cuti/page.tsx
+    ├── gaji/page.tsx
+    └── pengaturan/page.tsx
 
-To learn more about Next.js, take a look at the following resources:
+public/
+├── fonts/                  # Chirp font files
+└── img/                    # Images (cubes.png, user.jpeg)
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Screenshots
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Portal Karyawan
+- Mobile-first design dengan max-width 448px
+- Bottom navigation dengan 4 menu
+- Balance toggle untuk privasi
 
-## Deploy on Vercel
+### HR Dashboard
+- Full-width desktop layout
+- Fixed sidebar 288px dengan navigasi
+- Header dengan search, notifikasi, profile
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## License
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+MIT License
+
+## Author
+
+Tawaharu Team - 2026
